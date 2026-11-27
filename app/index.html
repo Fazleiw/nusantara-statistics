@@ -3,13 +3,37 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Weeknight Kitchen</title>
-<link rel="stylesheet" href="style.css">
-<script type="module" src="main.js"></script>
+<title>Nusantara Statistics · Indonesia in figures</title>
+<meta name="description" content="Indonesia's official statistics in one place: population, economy, provinces, prices and labour, each figure with its source and year.">
+<meta name="theme-color" content="#13263a">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="site.css">
+<script type="module" src="router.js"></script>
 </head>
 <body>
-<header><a href="#/">Weeknight Kitchen</a></header>
-<main id="app"></main>
-<footer>Six recipes for busy evenings.</footer>
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <a class="brand" href="#/" aria-label="Nusantara Statistics, home">
+      <svg class="brand-mark" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><rect x="2" y="17" width="6" height="13" rx="1.5"/><rect x="10" y="10" width="6" height="20" rx="1.5"/><rect x="18" y="4" width="6" height="26" rx="1.5" class="brand-accent"/><rect x="26" y="13" width="4" height="17" rx="1.5"/></svg>
+      <span class="brand-name">Nusantara Statistics<small>Indonesia in figures</small></span>
+    </a>
+    <nav class="site-nav" aria-label="Sections">
+      <a href="#/" data-section="overview">Overview</a>
+      <a href="#/population" data-section="population">Population</a>
+      <a href="#/economy" data-section="economy">Economy</a>
+      <a href="#/regions" data-section="regions">Regions</a>
+      <a href="#/prices" data-section="prices">Prices</a>
+      <a href="#/labour" data-section="labour">Labour</a>
+      <a href="#/sources" data-section="sources">Sources</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="wrap" tabindex="-1"></main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>Nusantara Statistics</strong> presents published figures from BPS – Statistics Indonesia and Bank Indonesia. Each figure names its source and year beside it; the <a href="#/sources">Sources</a> page lists them all. Data to 2024. Works offline.</p>
+  </div>
+</footer>
 </body>
 </html>
