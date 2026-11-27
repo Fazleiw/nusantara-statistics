@@ -1,8 +1,8 @@
 // Indonesia's 38 provinces, one row each: population (2023 estimate, thousands), HDI (2024) and poverty rate (2024, %).
-// The six Papua provinces were redrawn in 2022, so their figures are marked as 2023 estimates (estimasi 2023).
+// The six Papua provinces were redrawn in 2022, so their figures are marked as 2023 estimates (BPS's own term, estimasi).
 
 const BPS = 'BPS';
-const PAPUA = 'BPS, estimasi 2023';
+const PAPUA = 'BPS estimate, 2023';
 
 export const provinceYears = { population: 2023, hdi: 2024, poverty: 2024 };
 

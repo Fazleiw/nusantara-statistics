@@ -12,7 +12,7 @@ const referencePeriods = [
   ['Inflation', 'December, year on year'],
   ['Poverty rate', 'September survey round'],
   ['Unemployment rate', 'February survey round'],
-  ['Provincial population', '2023 estimate; Papua provinces estimasi 2023'],
+  ['Provincial population', '2023 estimate; Papua provinces BPS estimate, 2023'],
   ['Provincial HDI and poverty', '2024'],
   ['Reserves and policy rate', 'End of December 2024'],
 ];

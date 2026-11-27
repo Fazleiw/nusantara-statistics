@@ -1,5 +1,5 @@
 [
-  { "file": "1-overview.jpg", "path": "#/", "viewport": { "width": 1280, "height": 1000 } },
+  { "file": "1-overview.jpg", "path": "#/", "viewport": { "width": 1280, "height": 940 } },
   { "file": "2-regions.jpg", "path": "#/regions", "viewport": { "width": 1280, "height": 800 } },
   { "file": "3-economy.jpg", "path": "#/economy", "viewport": { "width": 1280, "height": 800 } },
   { "file": "4-phone.jpg", "path": "#/labour", "viewport": { "width": 390, "height": 844 } }

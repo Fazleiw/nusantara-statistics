@@ -70,7 +70,7 @@ function populationFacts() {
     { label: 'Added since the census', value: `${formatNumber(latestPoint(populationSeries).value - census2020.value / 1e6, 1)}M`, source: cite('BPS', '2020–2024') },
     { label: 'Provinces', href: '#/regions', value: String(provinceCount.value), source: cite(provinceCount.source, provinceCount.year) },
     { label: `Largest: ${largest.name}`, href: `#/regions/${largest.slug}`, value: `${formatNumber(largest.population / 1000, 1)}M`, source: cite('BPS', provinceYears.population) },
-    { label: `Smallest: ${smallest.name}`, href: `#/regions/${smallest.slug}`, value: `${formatNumber(smallest.population)}k`, source: smallest.source === 'BPS' ? cite('BPS', provinceYears.population) : cite('BPS, estimasi', 2023) },
+    { label: `Smallest: ${smallest.name}`, href: `#/regions/${smallest.slug}`, value: `${formatNumber(smallest.population)}k`, source: smallest.source === 'BPS' ? cite('BPS', provinceYears.population) : cite('BPS estimate', 2023) },
     { label: 'Sex ratio (men per 100 women)', value: formatNumber(sexRatio.value, 1), source: cite(sexRatio.source, sexRatio.year) },
   ])}`;
 }

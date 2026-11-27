@@ -75,7 +75,7 @@ export const sources = [
     publisher: 'BPS – Statistics Indonesia',
     title: 'Provincial population estimates',
     years: '2023',
-    covers: 'Population of each of the 38 provinces; the six Papua provinces are 2023 estimates (estimasi 2023).',
+    covers: 'Population of each of the 38 provinces; the six Papua provinces are 2023 estimates, which BPS calls estimasi.',
     pages: ['regions'],
   },
 ];

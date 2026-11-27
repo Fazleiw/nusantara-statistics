@@ -22,7 +22,7 @@ function ordinal(n) {
 }
 
 function sourceFor(province, year) {
-  return province.source === 'BPS' ? cite('BPS', year) : cite('BPS, estimasi', 2023);
+  return province.source === 'BPS' ? cite('BPS', year) : cite('BPS estimate', 2023);
 }
 
 function comparisonFigure(ctx, province, { key, title, format, reference, domain, lowestFirst }) {
@@ -47,7 +47,7 @@ function rankingFigure(ctx, province, hdiLatest) {
       ordered.map((p) => ({ label: p.name, value: p.hdi, href: `#/regions/${p.slug}` })),
       { width: chartWidth(ctx), label: 'HDI of every province', format: (v) => formatNumber(v, 1), reference: { value: hdiLatest, label: `Indonesia ${formatNumber(hdiLatest, 2)}` }, domain: [55, 87], labelWidth: 190, rowHeight: 21, highlight: (r) => r.label === province.name },
     ),
-    source: `${cite('BPS', 2024)}; Papua provinces ${cite('BPS, estimasi', 2023)}`,
+    source: `${cite('BPS', 2024)}; Papua provinces ${cite('BPS estimate', 2023)}`,
   });
 }
 
@@ -73,7 +73,7 @@ ${statRow([
   statTile({ label: 'HDI', value: formatNumber(province.hdi, 1), context: `${ordinal(rankOf(province, 'hdi'))} of ${provinces.length} · ${formatSigned(province.hdi - hdiLatest, 2)} vs Indonesia`, source: sourceFor(province, provinceYears.hdi) }),
   statTile({ label: 'Poverty rate', value: formatPercent(province.poverty, 1), context: `${ordinal(rankOf(province, 'poverty'))} highest of ${provinces.length} · ${formatSigned(povertyGap, 2, ' pt')} vs Indonesia`, source: sourceFor(province, provinceYears.poverty) }),
 ])}
-${province.source !== 'BPS' ? note(`${escapeHtml(province.name)} is one of the six Papua provinces redrawn in 2022. Its figures are BPS 2023 estimates (estimasi 2023) and are not comparable with series for the old province boundaries.`) : ''}
+${province.source !== 'BPS' ? note(`${escapeHtml(province.name)} is one of the six Papua provinces redrawn in 2022. Its figures are BPS 2023 estimates (BPS's own term, estimasi) and are not comparable with series for the old province boundaries.`) : ''}
 ${grid(
   comparisonFigure(ctx, province, { key: 'hdi', title: `HDI across ${province.island}, 2024`, format: (v) => formatNumber(v, 1), reference: { value: hdiLatest, label: `Indonesia ${formatNumber(hdiLatest, 2)}` }, domain: [55, 87] }),
   comparisonFigure(ctx, province, { key: 'poverty', title: `Poverty rate across ${province.island}, 2024`, format: (v) => formatPercent(v, 1), reference: { value: povertyLatest, label: `Indonesia ${formatPercent(povertyLatest, 2)}` }, lowestFirst: true }),

@@ -86,7 +86,7 @@ function extremesFigure(ctx, { title, key, reading, format, reference, highestIs
       picks.map((p) => ({ label: p.name, value: p[key], href: `#/regions/${p.slug}` })),
       { width: chartWidth(ctx, 'half'), label: title, format, reference, labelWidth: 170, domain, highlight: (r) => (highestIsWorse ? r.value > reference.value : r.value < reference.value) },
     ),
-    source: `${cite('BPS', 2024)}; Papua provinces ${cite('BPS, estimasi', 2023)}`,
+    source: `${cite('BPS', 2024)}; Papua provinces ${cite('BPS estimate', 2023)}`,
     note: `top five and bottom five of ${provinces.length}; accent marks ${highestIsWorse ? 'above' : 'below'} the national figure`,
   });
 }
@@ -108,7 +108,7 @@ export function render(params, ctx) {
 </div>
 <div class="table-wrap">
 <table class="province-table">
-  <caption>Population in thousands with share of the 38-province total ${cite('BPS', 2023)}. HDI and poverty rate ${cite('BPS', 2024)}; poverty bars in the accent colour are above the national ${formatPercent(nationalPoverty, 2)}. Provinces marked est. 2023 were created in 2022 ${cite('BPS, estimasi', 2023)}.</caption>
+  <caption>Population in thousands with share of the 38-province total ${cite('BPS', 2023)}. HDI and poverty rate ${cite('BPS', 2024)}; poverty bars in the accent colour are above the national ${formatPercent(nationalPoverty, 2)}. Provinces marked est. 2023 were created in 2022 ${cite('BPS estimate', 2023)}.</caption>
   <thead><tr id="province-head">${headerHtml()}</tr></thead>
   <tbody id="province-body">${bodyHtml(rows)}</tbody>
 </table>

@@ -45,12 +45,12 @@ function povertyFigure(ctx) {
   const national = latestPoint(povertyRate).value;
   return chartFigure({
     title: 'Highest poverty rates by province, 2024',
-    reading: `The six Papua provinces, Nusa Tenggara Timur and Maluku all sit well above the national rate of ${formatPercent(national, 2)}.`,
+    reading: `The six Papua provinces, Nusa Tenggara Timur and Maluku all sit well above the national rate of ${formatPercent(national, 2)}; the Papua figures are a 2023 estimate.`,
     chart: rankedBars(
       highest.map((p) => ({ label: p.name, value: p.poverty, href: `#/regions/${p.slug}` })),
       { width: chartWidth(ctx, 'half'), label: 'Provinces with the highest poverty rate', format: (v) => formatPercent(v, 1), reference: { value: national, label: `Indonesia ${formatPercent(national, 2)}` }, labelWidth: 150, highlight: (r) => r.value === highest[0].poverty, axis: true },
     ),
-    source: `${cite('BPS', provinceYears.poverty)}; Papua provinces ${cite('BPS, estimasi', 2023)}`,
+    source: `${cite('BPS', provinceYears.poverty)}; Papua provinces ${cite('BPS estimate', 2023)}`,
     table: { columns: [{ label: 'Province' }, { label: 'Poverty rate', numeric: true }], rows: highest.map((p) => [`<a href="#/regions/${p.slug}">${p.name}</a>`, formatPercent(p.poverty, 1)]) },
   });
 }
@@ -86,7 +86,7 @@ export function render(params, ctx) {
   const html = `${pageHeader({
     kicker: 'Indonesia · headline figures, data to 2024',
     title: 'Indonesia at a glance',
-    lede: `${formatNumber(pop.value, 1)} million people ${cite('BPS', pop.year)} in ${provinceCount.value} provinces. The economy grew ${formatPercent(latestPoint(realGrowth).value, 2)} in 2024 ${cite('BPS', 2024)}, prices rose ${formatPercent(latestPoint(inflation).value, 2)} over the year to December ${cite('BPS', 2024)}, and ${formatPercent(latestPoint(povertyRate).value, 2)} of people live below the poverty line ${cite('BPS', 2024)}.`,
+    lede: `${formatNumber(pop.value, 1)} million people in ${provinceCount.value} provinces, growing ${formatPercent(latestPoint(growthSeries).value, 2)} a year. The economy grew ${formatPercent(latestPoint(realGrowth).value, 2)} in 2024, prices rose ${formatPercent(latestPoint(inflation).value, 2)} over the year to December, and ${formatPercent(latestPoint(povertyRate).value, 2)} of people live below the poverty line ${cite('BPS', 2024)}.`,
   })}
 ${smallMultiples(headlinePanels(), { sparkWidth })}
 <div class="spacer"></div>
